@@ -1,0 +1,30 @@
+DROP TABLE IF EXISTS water_workorders;
+
+CREATE TABLE water_workorders (
+	objectid INTEGER NOT NULL,
+	status VARCHAR(1),
+	score INTEGER NOT NULL,
+	match_type VARCHAR(2) NOT NULL,
+	side VARCHAR(4),
+	match_addr VARCHAR(50),
+	arc_street VARCHAR(60),
+	file VARCHAR(35) NOT NULL,
+	directory VARCHAR(75) NOT NULL,
+	full_link VARCHAR(75) NOT NULL,
+	quick_link VARCHAR(35) NOT NULL,
+	date DATE NOT NULL,
+	location VARCHAR(55),
+	back_of_sh VARCHAR(53),
+	job_category VARCHAR(43) NOT NULL,
+	hyperlink VARCHAR(150) NOT NULL,
+	globalid VARCHAR(38) NOT NULL,
+	leak_number VARCHAR(15),
+	leak_num_y FLOAT,
+	leak_class INTEGER NOT NULL,
+	latitude FLOAT NOT NULL,
+	longitude FLOAT NOT NULL
+);
+
+\copy public.water_workorders from '/mnt/data/syracuse/clean_data/Main_Breaks_And_Leaks_Geocoded_cleaned.csv' delimiter ',' csv header;
+
+ALTER TABLE water_workorders RENAME COLUMN objectid TO workid;

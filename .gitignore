@@ -1,0 +1,11 @@
+data/
+*.DS_Store
+sensitive.py
+*~
+*.swp
+*.pyc
+.ipynb_checkpoints
+#*#
+secret_default_profile.yaml
+*.csv
+*.png

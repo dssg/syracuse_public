@@ -1,0 +1,7 @@
+datafiles:
+    excel_water_work_orders: /mnt/data/syracuse/raw/WaterWorkOrders_2004-2015.xlsx
+    updated_water_work_orders: /mnt/data/syracuse/raw/Main_Breaks_And_Leaks_Geocoded.csv
+datadir:
+    raw_data_dir : '/mnt/data/syracuse/raw'
+    clean_data_dir : '/mnt/data/syracuse/clean_data'
+    sensitive_data_dir: '/mnt/data/syracuse/sensitive'

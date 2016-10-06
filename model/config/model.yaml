@@ -1,0 +1,82 @@
+#YAML file containing the configuration
+#of the models.
+
+#DATE STARTS AT THE END OF THE YEAR E.G. DEC 31, 2013
+results_dir: './../results/'
+features_table: 'features.combined'
+break_window:
+    1Year: 'wo_next1'
+    2Year: 'wo_next2'
+    3Year: 'wo_next3'
+
+
+past_nearby_cols: [ 'wo_nearby_last_1'
+                    ,'wo_nearby_last_2'
+                    , 'wo_nearby_last_3'
+                    , 'wo_nearby_last_4'
+                    , 'wo_nearby_last_5'
+                    , 'wo_nearby_last_6'
+                    ]
+
+past_cols: [    'wo_curr'
+                , 'wo_last1'
+                , 'wo_last2'
+                , 'wo_last3'
+                , 'wo_last4'
+                , 'wo_last5'
+           ]
+
+future_cols: [  'wo_next1'
+                , 'wo_next2'
+                , 'wo_next3'
+             ]
+
+
+# [% of rows that have a break, % of rows that do not have breaks]
+rebalancing: [ [.3,.7], [.2,.8], [.5,.5], [.1,.9] ]
+
+
+parameters:
+    LR:
+        C: [0.001, 0.01, 0.1]
+        penalty: ['l1','l2']
+
+    NN: # NN has no attribute coefs_ or feature_importances_
+        n_neighbors: [3, 5]
+    DT:
+        max_depth: [5]
+    RF:
+        max_depth: [5, 50]
+        n_estimators: [10, 100]
+        max_features: [1, 1.0, 0.5]
+
+    NB: #NB has no attributes and therefore not iterable
+
+    SVM: #SVM has coefs_ only for the 'linear' kernel, it has dual coeffs otherwise
+        kernel: ['linear']
+        C: [0.025, 1]
+        probability: [True]
+        random_state: [0]
+    ET:
+        max_depth: [100, 500]
+        max_features: [log2, sqrt]
+        n_estimators: [100, 500]
+        random_state: [1]
+        min_samples_split: [1]
+
+    SGD: #SGD has predict_proba only for the log loss case, doesn't have them for squared loss
+        loss: ["log"]
+        penalty: ["l2", "l1"]
+    AB:
+        algorithm: ["SAMME", "SAMME.R"]
+        n_estimators: [50, 200]
+    GB:
+        learning_rate: [0.03]
+        subsample: [0.5]
+        max_depth: [3]
+        n_estimators: [100]
+        random_state: [852]
+    VC:
+        weights: [[1,2,1],[1,1,1],[2,1,1],[1,1,2], [5,1,1]]
+    VC2:
+        weights: [[2,1,1],[1,1,2],[1,2,1]]

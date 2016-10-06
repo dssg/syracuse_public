@@ -1,0 +1,70 @@
+#Initial configuation Flag.
+#If debug is true then there is not writing to DB even if
+#writeToDB is set on.
+debug: False
+
+#visualize the reuslts that gets written
+#to the results folder
+visualize: False
+
+#write Results to Database gets overriden by debug True
+writeToDB: True
+
+#run through a parameter grid for each model
+all_parameters: True
+
+
+#the break_windows field is for a list of labels
+#choices are '3Year', '2Year', '1Year'
+break_windows: ['3Year']
+
+#chooses a method for cross-validation
+#the current options are 'seventy_thirty' or
+#'no_overlap'
+cross_valname: 'no_overlap'
+
+#do downsampling
+downsample: True
+rebalancing: [ [0.2,0.8], [0.1,0.9], [0.3,0.7], [0.5,0.5] ]
+
+
+#number of years into the past you can look
+#the range is from 1 to 6 currently
+past_years: [3]
+
+#select the list of models that you would like to run.
+# Alphabetically arranged classifier names
+# 'AB'      AdaBoostClassifier
+# 'DT'      DecisionTreeClassifier
+# 'ET'      ExtraTrees
+# 'GB'      GradientBoostingClassifier
+# 'LR'      LogisticRegression
+# 'NB'      Gaussian_Naive_Bayes
+# 'NN'      KNeighboursClassifier
+# 'RF'      RandomForestClassifier
+# 'SVM'     SupportVectorMachines_Classifier
+# 'SGD'     Linear_classifier_stochastic_gradient_descent
+# 'VC'      VotingClassifier
+# 'VC2'     VotingClassifier
+models:  ['GB', 'RF']
+
+#cross validation split when using the
+#thirty seventy mode.
+cross_val:
+    thirty_seventy: [0.3,0.7]
+
+
+#use the feature of whether a wo was nearby
+use_nearby_wo: False
+
+#selection of the static features
+static_features: [  'diameters'
+                    , 'pipe_age'
+                    , 'install_year_imputed'
+                    , 'musym'
+                    , 'rocktype1'
+                    , 'rocktype2'
+                    , 'zone_name'
+                    , 'material_imputed'
+                    #, 'overall_rating'
+                                    ]

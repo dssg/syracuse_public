@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS work_orders_old; 
+
+CREATE TABLE work_orders_old (
+	date DATE NOT NULL, 
+	location VARCHAR(49), 
+	job_category VARCHAR(43) NOT NULL, 
+	leak_number VARCHAR(15), 
+	leak_year FLOAT, 
+	leak_num_sep FLOAT
+);
+
+\copy public.work_orders_old from '/mnt/data/syracuse/clean_data/water_work_orders_2004-2015.csv' delimiter ',' csv header; 
