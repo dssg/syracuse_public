@@ -25,10 +25,9 @@ proacively address water main breaks and leaks. The ulimate goal is to predict
 areas where water mains are most at risk of breaking, and which features are the
 best for predicting a water main break (e.g, year laid, materials, soil composition).
 
----
 ## Installation
 
-###Get the code
+### Get the code
 ```
 git clone https://github.com/dssg/syracuse
 cd syracuse
@@ -40,7 +39,7 @@ cd syracuse
 pip install -r requirements.txt
 ```
 
-###Database Configuration
+### Database Configuration
 
 Database Type: *PostGreSQL 9.4*
 with PostGIS extension
@@ -61,24 +60,21 @@ PGHOST: "postgres.123fake.com"
 PGDATABASE: "123fake"
 PGPASSWORD: "123fake"
 ```
----
 
-##Load data into postges
+## Load data into postges
 See the etl directory for details
 ```
 bash ./etl/do_etl.sh
 ```
 
-##Create features from the data
+## Create features from the data
 See model/features directory for details
 ```
 bash ./model/features/do_features.sh
 ```
----
 
-##Run the modeling pipeline
+## Run the modeling pipeline
 See model/README.md for details
----
 
 
 ## Directory Structure
