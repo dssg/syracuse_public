@@ -61,7 +61,7 @@ PGDATABASE: "123fake"
 PGPASSWORD: "123fake"
 ```
 
-## Load data into postges
+## Load data into postgres
 See the [etl directory](etl) for details
 ```
 bash ./etl/do_etl.sh
