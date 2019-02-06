@@ -1,4 +1,4 @@
-# Syracuse
+﻿# Syracuse
 [![Build Status](https://travis-ci.com/dssg/syracuse.svg?token=qr1WKDpoEiNDipEKFzrb&branch=master)](https://travis-ci.com/dssg/syracuse)
 
 ## About
@@ -63,7 +63,7 @@ PGPASSWORD: "123fake"
 ```
 ---
 
-##Load data into postges
+##Load data into postgres.
 See the etl directory for details
 ```
 bash ./etl/do_etl.sh
